@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/solvman/intro-component-with-signup-form-master](https://github.com/solvman/intro-component-with-signup-form-master)
+- Live Site URL: [https://fancy-lokum-cda7a6.netlify.app/](https://fancy-lokum-cda7a6.netlify.app/)
 
 ## My process
 
