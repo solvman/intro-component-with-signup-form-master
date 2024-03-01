@@ -203,5 +203,10 @@ body {
 
   .signup-form {
     margin-bottom: 0;
+    padding: 2.5rem;
+  }
+
+  .signup-form form {
+    gap: 1.25rem;
   }
 }
