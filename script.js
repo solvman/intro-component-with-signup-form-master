@@ -20,10 +20,10 @@ const isPasswordSecure = (password) => {
 };
 
 const showError = (element, message) => {
-  const parentEl = element.closest(".signup-form__field");
+  const formFieldEl = element.closest(".signup-form__field");
   const messageEl = parentEl.querySelector("small");
 
-  parentEl.classList.add("error");
+  formFieldEl.classList.add("error");
   messageEl.innerText = message;
 };
 
