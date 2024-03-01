@@ -1,8 +1,8 @@
-const formEl = document.querySelector("signup-form");
-const firstNameEl = formEl.querySelector("first-name");
-const lastNameEl = formEl.querySelector("last-name");
-const emailEl = formEl.querySelector("email");
-const passwordEl = formEl.querySelector("password");
+const formEl = document.querySelector(".signup-form form");
+const firstNameEl = formEl.querySelector("#first-name");
+const lastNameEl = formEl.querySelector("#last-name");
+const emailEl = formEl.querySelector("#email");
+const passwordEl = formEl.querySelector("#password");
 
 const isReauiqred = (value) => (value === "" ? false : true);
 
@@ -35,52 +35,60 @@ const hideError = (element) => {
   messageEl.innerText = "";
 };
 
-const checkEmail = (email) => {
+const checkFirstName = () => {
   let valid = false;
-  if (!isReauiqred(email)) {
-    showError(email, "Email cannot be empty");
-  } else if (!isEmailValid(email)) {
-    showError(email, "Email is not valid");
-  } else {
-    hideError(email);
-    valid = true;
-  }
+  const firstName = firstNameEl.value.trim();
 
-  return valid;
-};
-
-const checkPassword = (password) => {
-  let valid = false;
-  if (!isReauiqred(password)) {
-    showError(password, "Password cannot be empty");
-  } else if (!isPasswordSecure(password)) {
-    showError(password, "Password is not secure");
-  } else {
-    hideError(password);
-    valid = true;
-  }
-
-  return valid;
-};
-
-const checkName = (firstName) => {
-  let valid = false;
   if (!isReauiqred(firstName)) {
-    showError(firstName, "First name cannot be empty");
+    showError(firstNameEl, "First name cannot be empty");
   } else {
-    hideError(firstName);
+    hideError(firstNameEl);
     valid = true;
   }
 
   return valid;
 };
 
-const checkLastName = (lastName) => {
+const checkLastName = () => {
   let valid = false;
+  const lastName = lastNameEl.value.trim();
+
   if (!isReauiqred(lastName)) {
-    showError(lastName, "Last name cannot be empty");
+    showError(lastNameEl, "Last name cannot be empty");
   } else {
-    hideError(lastName);
+    hideError(lastNameEl);
+    valid = true;
+  }
+
+  return valid;
+};
+
+const checkEmail = () => {
+  let valid = false;
+  const email = emailEl.value.trim();
+
+  if (!isReauiqred(email)) {
+    showError(emailEl, "Email cannot be empty");
+  } else if (!isEmailValid(email)) {
+    showError(emailEl, "Email is not valid");
+  } else {
+    hideError(emailEl);
+    valid = true;
+  }
+
+  return valid;
+};
+
+const checkPassword = () => {
+  let valid = false;
+  const password = passwordEl.value.trim();
+
+  if (!isReauiqred(password)) {
+    showError(passwordEl, "Password cannot be empty");
+  } else if (!isPasswordSecure(password)) {
+    showError(passwordEl, "Password is not secure");
+  } else {
+    hideError(passwordEl);
     valid = true;
   }
 
@@ -102,16 +110,16 @@ const debounce = (fn, delay = 500) => {
 formEl.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const isEmailValid = checkEmail(emailEl.value);
-  const isPasswordValid = checkPassword(passwordEl.value);
-  const isFirstNameValid = checkName(firstNameEl.value);
-  const isLastNameValid = checkLastName(lastNameEl.value);
+  const isFirstNameValid = checkFirstName();
+  const isLastNameValid = checkLastName();
+  const isEmailValid = checkEmail();
+  const isPasswordValid = checkPassword();
 
   const isFormValid =
-    isEmailValid && isPasswordValid && isFirstNameValid && isLastNameValid;
+    isFirstNameValid && isLastNameValid && isEmailValid && isPasswordValid;
 
   if (isFormValid) {
-    alert("Form is submitted");
+    alert("Form is valid");
     formEl.reset();
   }
 });
@@ -127,7 +135,7 @@ formEl.addEventListener(
         checkPassword(event.target.value);
         break;
       case firstNameEl:
-        checkName(event.target.value);
+        checkFirstName(event.target.value);
         break;
       case lastNameEl:
         checkLastName(event.target.value);
