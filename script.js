@@ -21,17 +21,17 @@ const isPasswordSecure = (password) => {
 
 const showError = (element, message) => {
   const formFieldEl = element.closest(".signup-form__field");
-  const messageEl = parentEl.querySelector("small");
+  const messageEl = formFieldEl.querySelector("small");
 
   formFieldEl.classList.add("error");
   messageEl.innerText = message;
 };
 
 const hideError = (element) => {
-  const parentEl = element.closest(".signup-form__field");
-  const messageEl = parentEl.querySelector("small");
+  const formFieldEl = element.closest(".signup-form__field");
+  const messageEl = formFieldEl.querySelector("small");
 
-  parentEl.classList.remove("error");
+  formFieldEl.classList.remove("error");
   messageEl.innerText = "";
 };
 

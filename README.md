@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/solvman/intro-component-with-signup-form-master](https://github.com/solvman/intro-component-with-signup-form-master)
-- Live Site URL: [https://fancy-lokum-cda7a6.netlify.app/](https://fancy-lokum-cda7a6.netlify.app/)
+- Live Site URL: [https://effulgent-semifreddo-107c4f.netlify.app/](https://effulgent-semifreddo-107c4f.netlify.app/)
 
 ## My process
 
