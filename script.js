@@ -129,16 +129,16 @@ formEl.addEventListener(
   debounce((event) => {
     switch (event.target) {
       case emailEl:
-        checkEmail(event.target.value);
+        checkEmail();
         break;
       case passwordEl:
-        checkPassword(event.target.value);
+        checkPassword();
         break;
       case firstNameEl:
-        checkFirstName(event.target.value);
+        checkFirstName();
         break;
       case lastNameEl:
-        checkLastName(event.target.value);
+        checkLastName();
         break;
     }
   }),
